@@ -21,7 +21,7 @@ def rain_detector_svm():
         rain_features = dict(request.form).values()
         rain_features = np.array([float(x) for x in rain_features])
         module_dir = os.path.dirname(__file__)
-        f = os.path.join(module_dir, 'train_model\predict_rain_model_svm_fix.pkl')
+        f = os.path.join(module_dir, 'train_model/predict_rain_model_svm_fix.pkl')
         model = joblib.load(f)
         robust_scaler = model[0]
         model_svm = model[2]
@@ -44,7 +44,7 @@ def rain_detector_logreg():
         rain_features = dict(request.form).values()
         rain_features = np.array([float(x) for x in rain_features])
         module_dir = os.path.dirname(__file__)
-        f = os.path.join(module_dir, 'train_model\predict_rain_model_logreg_fix.pkl')
+        f = os.path.join(module_dir, 'train_model/predict_rain_model_logreg_fix.pkl')
         model = joblib.load(f)
         robust_scaler = model[0]
         model_logreg = model[2]
